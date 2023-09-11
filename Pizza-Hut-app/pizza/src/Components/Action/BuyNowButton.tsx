@@ -6,8 +6,8 @@ import Config from '../../Config';
 import { Button } from '@mui/material';
 
 interface BuyNowButtonProps {
-  user: any; // Replace 'any' with the actual type of 'user'
-  variety: any; // Replace 'any' with the actual type of 'variety'
+  user: any; 
+  variety: any; 
   variant: any;
   color:any;
   className:any

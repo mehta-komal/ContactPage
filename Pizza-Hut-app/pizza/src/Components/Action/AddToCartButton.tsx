@@ -9,7 +9,7 @@ import { Acontext } from '../../App';
 interface AddToCartButtonProps {
   user: any;
   variety: any;
-  setCartItems: React.Dispatch<React.SetStateAction<any>>; // Assuming 'setCartItems' is a function to set an array of 'Variety'
+  setCartItems: React.Dispatch<React.SetStateAction<any>>; 
   quantity: number;
   disabled: boolean;
 }

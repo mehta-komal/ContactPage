@@ -9,36 +9,16 @@ import Config from "./Config";
 import axios from "axios";
 import Routes from "./Routs/Routes";
 
-export const Acontext = createContext<any>(null); // Replace 'any' with the appropriate context type
-
+export const Acontext = createContext<any>(null); 
 const App: React.FC = () => {
-  // const udata = () => {
-  //   let uid=localStorage.getItem("userid")
-  //   const storedUser = JSON.parse( uid || "");
-  //   return storedUser ? storedUser : null;
-  // };
-  // const udata = (): any | null => {
-  //   const uid = localStorage.getItem("userid");
   
-  //   if (!uid) {
-  //     return null; // Return null if 'uid' is null or undefined
-  //   }
-  
-  //   try {
-  //     const storedUser = JSON.parse(uid);
-  //     return storedUser ?? null;
-  //   } catch (error) {
-  //     console.error("Error parsing user data:", error);
-  //     return null;
-  //   }
-  // };
   const udata = (): any | null => {
     const uid = localStorage.getItem("userid");
   
-    console.log("uid:", uid); // Add this line for debugging
+    console.log("uid:", uid); 
   
     if (!uid || uid === "undefined") {
-      return null; // Return null if 'uid' is null or "undefined"
+      return null; 
     }
   
     try {
@@ -52,14 +32,14 @@ const App: React.FC = () => {
   
   
   const [search, setSearch] = useState<string>("");
-  const [product, setproduct] = useState<any>(null); // Replace 'any' with the appropriate type
-  const [isLogin, setisLogin] = useState<any>(udata); // Replace 'any' with the appropriate type
+  const [product, setproduct] = useState<any>(null); 
+  const [isLogin, setisLogin] = useState<any>(udata); 
   const [data, setdata] = useState<any>(() => {
     const storedData = localStorage.getItem("productData");
     return storedData ? JSON.parse(storedData) : [];
   });
-  const [cartItems, setCartItems] = useState<any[]>([]); // Replace 'any' with the appropriate type
-  const [user, setuser] = useState<any>([]); // Replace 'any' with the appropriate type
+  const [cartItems, setCartItems] = useState<any[]>([]); 
+  const [user, setuser] = useState<any>([]); 
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {

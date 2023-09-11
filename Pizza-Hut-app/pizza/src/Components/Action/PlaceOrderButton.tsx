@@ -5,8 +5,8 @@ import Config from '../../Config';
 import { Button } from '@mui/material';
 
 interface PlaceOrderButtonProps {
-  filteredItems: any[]; // Adjust the type of filteredItems according to your data structure
-  setFilteredItems: React.Dispatch<React.SetStateAction<any[]>>; // Adjust the type of setFilteredItems according to your data structure
+  filteredItems: any[]; 
+  setFilteredItems: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
 const PlaceOrderButton: React.FC<PlaceOrderButtonProps> = ({ filteredItems, setFilteredItems }) => {

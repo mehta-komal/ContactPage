@@ -46,7 +46,7 @@ const Signin: React.FC = () => {
           const formDataWithEncryptedPasswords = {
             ...formData,
             password: hashedPassword,
-            confirmpassword: hashedPassword, // You can remove this line if you don't want to send confirm password
+            confirmpassword: hashedPassword, 
           };
 
           axios
