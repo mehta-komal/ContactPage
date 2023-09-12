@@ -32,13 +32,13 @@ const Data: React.FC = () => {
 
     if (sortType) {
       filteredData = filteredData.filter(
-        (variety: any) => variety.strength === sortType
+        (variety: any) => variety.Type === sortType
       );
     }
 
     setFilteredVarieties(filteredData);
     setCurrentPage(1);
-  }, [search, sortType, data]);
+  }, [ sortType, data]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -74,29 +74,29 @@ const Data: React.FC = () => {
           <Button
             variant="contained"
             color="warning"
-            className={sortType === "Light" ? "active-button" : ""}
-            onClick={() => handleSort("Light")}
+            className={sortType === "Vegetarian" ? "active-button" : ""}
+            onClick={() => handleSort("Vegetarian")}
             style={{ margin: 10 }}
           >
-            Light
+            Vegitarian
           </Button>
           <Button
             variant="contained"
             color="primary"
-            className={sortType === "Medium" ? "active-button" : ""}
-            onClick={() => handleSort("Medium")}
+            className={sortType === "Non-Vegetarian" ? "active-button" : ""}
+            onClick={() => handleSort("Non-Vegetarian")}
             style={{ margin: 10 }}
           >
-            Medium
+            Non-Vegitarian
           </Button>
-          <Button
+          {/* <Button
             variant="contained"
             color="warning"
             className={sortType === "Strong" ? "active-button" : ""}
             onClick={() => handleSort("Strong")}
           >
             Strong
-          </Button>
+          </Button> */}
         </div>
       </div>
 
@@ -118,7 +118,7 @@ const Data: React.FC = () => {
                 <Typography variant="body2" color="text.secondary">
                   {variety.description}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="secondary">
                   {variety.Type}
                 </Typography>
                 <Typography

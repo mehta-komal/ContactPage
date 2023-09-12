@@ -42,7 +42,7 @@ const GetData: React.FC = () => {
 
     if (sortType) {
       filteredData = filteredData.filter(
-        (variety) => variety.strength === sortType
+        (variety) => variety.Type === sortType
       );
     }
 
@@ -84,29 +84,29 @@ const GetData: React.FC = () => {
           <Button
             variant="contained"
             color="warning"
-            className={sortType === "Mild" ? "active-button" : ""}
-            onClick={() => handleSort("Mild")}
+            className={sortType === "Vegitarian" ? "active-button" : ""}
+            onClick={() => handleSort("Vegitarian")}
             style={{ margin: 10 }}
           >
-            Mild
+            Vegitarian
           </Button>
           <Button
             variant="contained"
             color="primary"
-            className={sortType === "Medium" ? "active-button" : ""}
-            onClick={() => handleSort("Medium")}
+            className={sortType === "Non-Vegitarian" ? "active-button" : ""}
+            onClick={() => handleSort("Non-Vegitarian")}
             style={{ margin: 10 }}
           >
-            Medium
+            Non-Vegitarian
           </Button>
-          <Button
+          {/* <Button
             variant="contained"
             color="warning"
             className={sortType === "Strong" ? "active-button" : ""}
             onClick={() => handleSort("Strong")}
           >
             Strong
-          </Button>
+          </Button> */}
         </div>
       </div>
 

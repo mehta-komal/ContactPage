@@ -31,7 +31,7 @@ const App: React.FC = () => {
   };
   
   
-  const [search, setSearch] = useState<string>("");
+  // const [search, setSearch] = useState<string>("");
   const [product, setproduct] = useState<any>(null); 
   const [isLogin, setisLogin] = useState<any>(udata); 
   const [data, setdata] = useState<any>(() => {
@@ -70,8 +70,8 @@ const App: React.FC = () => {
           value={{
             product,
             setproduct,
-            search,
-            setSearch,
+            // search,
+            // setSearch,
             data,
             setdata,
             cartItems,
