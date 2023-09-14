@@ -17,13 +17,11 @@ interface PopupProps {
 }
 
 const Popup: FC<PopupProps> = ({ variety, onClose }) => {
-  const calculateDiscountedPrice = () => {
-    if (variety && variety.discount) {
-      const discountPercentage = variety.discount;
-      const discount = (variety.price * discountPercentage) / 100;
-      return (variety.price - discount).toFixed(2);
+  const displayPrice = (variety: Variety | null): string => {
+    if (variety && typeof variety.price === 'string') {
+      return `${variety.price}`;
     }
-    return variety?.price.toFixed(2);
+    return 'Invalid price';
   };
 
   return (
@@ -52,27 +50,9 @@ const Popup: FC<PopupProps> = ({ variety, onClose }) => {
         <Typography variant="body2" className="popup-text">
           <span>Strength:</span> {variety?.strength}
         </Typography>
-        {variety && variety.discount ? (
-          <>
-            <Typography variant="body2" className="popup-text-p">
-              Price:{" "}
-              <span style={{ fontSize: "20px", color: "red" }}>
-                -{variety.discount}%{" "}
-              </span>
-              ₹{calculateDiscountedPrice()}
-            </Typography>
-            <Typography variant="body2" className="popup-text-p">
-              M.R.P :{" "}
-              <span style={{ textDecoration: "line-through" }}>
-                ₹{variety.price.toFixed(2)}
-              </span>
-            </Typography>
-          </>
-        ) : (
-          <Typography variant="body2" className="popup-text-p">
-            Price: ₹{variety?.price.toFixed(2)}
-          </Typography>
-        )}
+        <Typography variant="body2" className="popup-text-p">
+          Price: ₹{displayPrice(variety)}
+        </Typography>
       </DialogContent>
     </Dialog>
   );

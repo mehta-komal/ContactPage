@@ -30,15 +30,25 @@ const OrderHistory: React.FC = () => {
       });
   }, []);
 
-  const calculateDiscountedPrice = (price: number, discount?: number) => {
+  const calculateDiscountedPrice = (price: number, discount?: number): string => {
+    if (typeof price !== 'number' || isNaN(price)) {
+      return 'Invalid price';
+    }
+  
+    if (discount && typeof discount !== 'number') {
+      return 'Invalid discount';
+    }
+  
     if (discount) {
       const discountAmount = (price * discount) / 100;
       const discountedPrice = price - discountAmount;
       return discountedPrice.toFixed(2);
     }
+  
     return price.toFixed(2);
   };
-
+  
+  
   return (
     <div className="order-history-container">
       <Typography variant="h6" className="o-heading">
